@@ -7,15 +7,40 @@
 
 /* Basic styles for the page */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Bradley Hand", "cursive";
     line-height: 1.6;
-    background-color: #f7f7f7;
+    background-color: #080808;
+    /* background-image: url(../../assets/aboutbg.avif);
+    background-size: cover;
+    background-position: center; */
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    color: #fff;
+}
+
+header{
+    background-image: url('../../assets/bg3.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header-container{
+    max-width: 1200px;
+    width: 100%;
+    padding:20px;
+}
+
+.about-container{
+    padding-top: 100px;
 }
 
 /* Header styles */
@@ -47,13 +72,14 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 20px;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 30px;
+    font-weight: bold;
 }
 
 .btn {
@@ -82,7 +108,32 @@ body {
     margin-bottom: 40px;
 }
 
-.feature-item, .price-item {
+.feature-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    text-align: center;
+    flex: 1 1 calc(25% - 20px); 
+}
+
+.feature-item img {
+    width: 200px; /* Adjust the width as per your design */
+    height: 150px; /* Adjust the height as per your design */
+    object-fit: cover; /* Ensures the image retains its aspect ratio */
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+}
+
+.price-item {
     margin-bottom: 40px;
 }
 
@@ -109,4 +160,17 @@ body {
 .social-links li a {
     color: #333;
     font-size: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .feature-item {
+        flex: 1 1 calc(50% - 20px); 
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-item {
+        flex: 1 1 100%; 
+    }
 }

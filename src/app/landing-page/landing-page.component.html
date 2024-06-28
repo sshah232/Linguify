@@ -1,48 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Landing Page</title>
     <link rel="stylesheet" href="landing-page.component.css">
 </head>
+
 <body>
     <header class="hero">
-        <div class="container">
+        <div class="header-container">
             <nav>
                 <h1 class="logo">Your Logo</h1>
                 <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="hero-content">
-                <h1>Welcome to Your Website</h1>
-                <p>A simple and clean landing page template.</p>
+                <h1>Welcome to Linguify</h1>
+                <p>Making content accessible in any language for everyone.</p>
                 <a href="#signup" class="btn btn-primary">Sign Up</a>
                 <a href="#learn-more" class="btn btn-secondary">Learn More</a>
             </div>
         </div>
     </header>
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-container">
+                <h2>About</h2>
+                <div>
+                    <p>Linguify is a transformative platform designed to break down language barriers and empower
+                        universal access to information. Whether you encounter challenges due to language barriers or
+                        literacy limitations, Linguify offers a solution by seamlessly converting text and videos into
+                        any language of your choice. This platform serves as a vital tool for individuals seeking to
+                        overcome linguistic obstacles, enabling them to access and understand content that was
+                        previously inaccessible. Whether you need to read an article in another language or comprehend
+                        multimedia content, Linguify ensures inclusivity and equal access for all, fostering
+                        communication and understanding across diverse linguistic backgrounds. Discover a new world of
+                        accessibility with Linguify, where every voice can be heard and understood.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section id="features" class="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="feature-item">
+                <h3>Multilingual Text Conversion</h3>
+                <p>Description of feature 1.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Video Subtitle Translation</h3>
+                <p>Description of feature 2.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Document Translation</h3>
+                <p>Description of feature 3.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Voice Translation</h3>
+                <p>Description of feature 4.</p>
+            </div>
+        </div>
+    </section> -->
 
     <section id="features" class="features">
         <div class="container">
             <h2>Features</h2>
-            <div class="feature-item">
-                <h3>Feature 1</h3>
-                <p>Description of feature 1.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Feature 2</h3>
-                <p>Description of feature 2.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Feature 3</h3>
-                <p>Description of feature 3.</p>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <img src="assets/feature1-img.jpeg" alt="Multilingual Text Conversion">
+                    <h3>Multilingual Text Conversion</h3>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/feature4.jpeg" alt="Voice Translation">
+                    <h3>Voice Translation</h3>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/feature3.jpeg" alt="Document Translation">
+                    <h3>Document Translation</h3>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/feature2.jpg" alt="Video Subtitle Translation">
+                    <h3>Video Subtitle Translation</h3>
+                </div>
             </div>
         </div>
     </section>
+
 
     <section id="pricing" class="pricing">
         <div class="container">
@@ -71,4 +120,5 @@
         </div>
     </footer>
 </body>
+
 </html>
