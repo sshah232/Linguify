@@ -1,124 +1,603 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Landing Page</title>
-    <link rel="stylesheet" href="landing-page.component.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="https://image.ibb.co/fOur3b/favicon.png" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="theme-color" content="#1885ed">
+    <title>Linguify</title>
+    <style>
+        .footer {
+    padding: 20px 0;
+    background-color: #1E3D58;
+    color: #fff;
+}
+
+.footer__img {
+    max-width: 100%;
+    height: auto;
+}
+
+.footer__title {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.footer__light {
+    font-weight: 300;
+}
+
+.footer__social {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer__social-l img {
+    width: 24px;
+    height: 24px;
+}
+
+.btn--white {
+    background-color: #fff;
+    color: #1E3D58;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.btn--width {
+    width: auto;
+}
+
+.career_title {
+    font-size: 2rem; /* Adjust as needed */
+}
+
+.career_sub {
+    font-size: 1.5rem; /* Adjust as needed */
+}
+    </style>
 </head>
 
 <body>
-    <header class="hero">
-        <div class="header-container">
-            <nav>
-                <h1 class="logo">Your Logo</h1>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="hero-content">
-                <h1>Welcome to Linguify</h1>
-                <p>Making content accessible in any language for everyone.</p>
-                <a href="#signup" class="btn btn-primary">Sign Up</a>
-                <a href="#learn-more" class="btn btn-secondary">Learn More</a>
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo"><img class="header__img" src="https://image.ibb.co/kcVou6/path3000.png">
+                <h1 class="header__title">Lingui<span class="header__light">.fy</span></h1>
+            </div>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="header__menu">
+                <nav id="navbar" class="header__nav collapse">
+                    <ul class="header__elenco">
+                        <li class="header__el"><a href="#" class="header__link">Home</a></li>
+                        <li class="header__el"><a href="#" class="header__link">Premium</a></li>
+                        <li class="header__el"><a href="#" class="header__link">Success stories</a></li>
+                        <li class="header__el"><a href="#" class="header__link">Blog</a></li>
+                        <li class="header__el"><a href="#" class="header__link">Contact us</a></li>
+                        <li class="header__el header__el--blue"><a href="" class="btn btn--white">Sign In →</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-container">
-                <h2>About</h2>
-                <div>
-                    <p>Linguify is a transformative platform designed to break down language barriers and empower
-                        universal access to information. Whether you encounter challenges due to language barriers or
-                        literacy limitations, Linguify offers a solution by seamlessly converting text and videos into
-                        any language of your choice. This platform serves as a vital tool for individuals seeking to
-                        overcome linguistic obstacles, enabling them to access and understand content that was
-                        previously inaccessible. Whether you need to read an article in another language or comprehend
-                        multimedia content, Linguify ensures inclusivity and equal access for all, fostering
-                        communication and understanding across diverse linguistic backgrounds. Discover a new world of
-                        accessibility with Linguify, where every voice can be heard and understood.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- <section id="features" class="features">
-        <div class="container">
-            <h2>Features</h2>
-            <div class="feature-item">
-                <h3>Multilingual Text Conversion</h3>
-                <p>Description of feature 1.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Video Subtitle Translation</h3>
-                <p>Description of feature 2.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Document Translation</h3>
-                <p>Description of feature 3.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Voice Translation</h3>
-                <p>Description of feature 4.</p>
-            </div>
-        </div>
-    </section> -->
 
-    <section id="features" class="features">
+    <div class="sect sect--padding-top">
         <div class="container">
-            <h2>Features</h2>
-            <div class="feature-list">
-                <div class="feature-item">
-                    <img src="assets/feature1-img.jpeg" alt="Multilingual Text Conversion">
-                    <h3>Multilingual Text Conversion</h3>
-                </div>
-                <div class="feature-item">
-                    <img src="assets/feature4.jpeg" alt="Voice Translation">
-                    <h3>Voice Translation</h3>
-                </div>
-                <div class="feature-item">
-                    <img src="assets/feature3.jpeg" alt="Document Translation">
-                    <h3>Document Translation</h3>
-                </div>
-                <div class="feature-item">
-                    <img src="assets/feature2.jpg" alt="Video Subtitle Translation">
-                    <h3>Video Subtitle Translation</h3>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="site">
+                        <h1 class="site__title">Pick a Service. We Deliver</h1>
+                        <h2 class="site__subtitle">Pick an errand. We run fo you</h2>
+                        <div class="site__box-link">
+                            <a class="btn btn--width" href="">Pricing</a>
+                            <a class="btn btn--revert btn--width" href="">Contact</a>
+                        </div>
+                        <img class="site__img" src="https://image.ibb.co/c7grYb/image3015.png">
+                        <!-- <div class="errand">
+                            <h1 class="errand_title">hey</h1>
+                            <div class="row row--center row--margin">
+
+                                <div class="col-md-4 col-sm-4 price-box price-box--purple">
+
+                                    <div class="price-box__wrap">
+
+                                        <div class="price-box__img"></div>
+
+                                        <h1 class="price-box__title">
 
 
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <h2>Pricing</h2>
-            <div class="price-item">
-                <h3>Basic Plan</h3>
-                <p>$10/month</p>
-                <a href="#signup" class="btn btn-primary">Sign Up</a>
-            </div>
-            <div class="price-item">
-                <h3>Pro Plan</h3>
-                <p>$20/month</p>
-                <a href="#signup" class="btn btn-primary">Sign Up</a>
-            </div>
-        </div>
-    </section>
+                                            Startup
 
-    <footer id="contact" class="footer">
-        <div class="container">
-            <p>Contact us at contact.com</p>
-            <ul class="social-links">
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
-        </div>
-    </footer>
-</body>
+                                        </h1>
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlSelect2">Write Errand</label>
+                                                <input class="form-control form-control-lg" type="text"
+                                                    placeholder="shopping delivery, parcel delivery etc.">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlTextarea1">Errand Details</label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                    rows="3"></textarea>
+                                            </div>
 
-</html>
+                                            <!--div class="form-group">
+      <label for="exampleFormControlSelect1">Service</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>shopping</option>
+        <option>grocery pickup</option>
+        <option>parcel pickup</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div -->
+                                            <!-- <div class="form-group">
+                                                <label for="exampleFormControlSelect2">Select Schedule </label>
+                                                <select multiple class="form-control" id="exampleFormControlSelect2">
+                                                    <option>5:0 am - 6:00 am</option>
+                                                    <option>6:00 am - 8:00 am</option>
+                                                    <option>8:00 am - 9:00 am </option>
+                                                    <option>9:00 am - 10:00 am</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+
+                                            <button class="btn btn-primary" type="submit">Confirm</button>
+
+
+
+                                        </form>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="sect sect--padding-bottom">
+                <div class="container">
+                    <div class="row row--center">
+                        <h1 class="row__title">
+                            Pricing
+                        </h1>
+                        <h2 class="row__sub">What fits your business the best?</h2>
+                    </div>
+                    <div class="row row--center row--margin">
+                        <div class="col-md-4 col-sm-4 price-box price-box--purple">
+                            <div class="price-box__wrap">
+                                <div class="price-box__img"></div>
+                                <h1 class="price-box__title">
+                                    Startup
+                                </h1>
+                                <p class="price-box__people">
+                                    1 - 100 people
+                                </p>
+                                <h2 class="price-box__discount">
+                                    <span class="price-box__dollar">$</span>49<span
+                                        class="price-box__discount--light">/mo</span>
+                                </h2>
+                                <h3 class="price-box__price">
+                                    $65/mo
+                                </h3>
+                                <p class="price-box__feat">
+                                    Features
+                                </p>
+                                <ul class="price-box__list">
+                                    <li class="price-box__list-el">1 License</li>
+                                    <li class="price-box__list-el">24h helpcenter</li>
+                                    <li class="price-box__list-el">No tasks limit</li>
+                                    <li class="price-box__list-el">No contractors limit </li>
+                                </ul>
+                                <div class="price-box__btn">
+                                    <a class="btn btn--purple btn--width">Start now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- second -->
+                        <div class="col-md-4 col-sm-4 price-box price-box--violet">
+                            <div class="price-box__wrap">
+                                <div class="price-box__img"></div>
+                                <h1 class="price-box__title">
+                                    Business
+                                </h1>
+                                <p class="price-box__people">
+                                    100 - 500 people
+                                </p>
+                                <h2 class="price-box__discount">
+                                    <span class="price-box__dollar">$</span>149<span
+                                        class="price-box__discount--light">/mo</span>
+                                </h2>
+                                <h3 class="price-box__price">
+                                    $225/mo
+                                </h3>
+                                <p class="price-box__feat">
+                                    Features
+                                </p>
+                                <ul class="price-box__list">
+                                    <li class="price-box__list-el">1 License</li>
+                                    <li class="price-box__list-el">24h helpcenter</li>
+                                    <li class="price-box__list-el">No tasks limit</li>
+                                    <li class="price-box__list-el">No contractors limit </li>
+                                </ul>
+                                <div class="price-box__btn">
+                                    <a class="btn btn--violet btn--width">Start now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- terzo -->
+                        <div class="col-md-4 col-sm-4 price-box price-box--blue">
+                            <div class="price-box__wrap">
+                                <div class="price-box__img"></div>
+                                <h1 class="price-box__title">
+                                    Corporate
+                                </h1>
+                                <p class="price-box__people">
+                                    500+ people
+                                </p>
+                                <h2 class="price-box__discount">
+                                    <span class="price-box__dollar">$</span>399<span
+                                        class="price-box__discount--light">/mo</span>
+                                </h2>
+                                <h3 class="price-box__price">
+                                    $499/mo
+                                </h3>
+                                <p class="price-box__feat">
+                                    Features
+                                </p>
+                                <ul class="price-box__list">
+                                    <li class="price-box__list-el">1 License</li>
+                                    <li class="price-box__list-el">24h helpcenter</li>
+                                    <li class="price-box__list-el">No tasks limit</li>
+                                    <li class="price-box__list-el">No contractors limit </li>
+                                </ul>
+                                <div class="price-box__btn">
+                                    <a class="btn btn--blue btn--width">Start now</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="sect sect--white">
+                <div class="container">
+                    <div class="row">
+                        <h1 class="row__title">
+                            Success Stories
+                        </h1>
+                        <h2 class="row__sub">Companies you <span class="row__sub--light">(will)</span> propably know
+                        </h2>
+                    </div>
+                    <div class="row row--margin row--text-center">
+                        <div class="col-md-8 col-sm-10 col-xs-12 row__carousel">
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                </ol>
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <div class="item__content">
+                                            <img class="item__img"
+                                                src="https://cdn.worldvectorlogo.com/logos/slack-1.svg"
+                                                alt="Slack"><span class="item__name">slack</span>
+                                            <p class="item__description">
+                                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                                                ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+                                                dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+                                                ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
+                                                quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+                                                arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                                            </p>
+                                        </div>
+                                        <div class="item__avatar"></div>
+                                        <p class="item__people">Josh Doe</p>
+                                        <p class="item__occupation">Ceo of Google</p>
+                                    </div>
+
+                                    <div class="item">
+                                        <div class="item__content">
+                                            <img class="item__img"
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Google-favicon-2015.png/150px-Google-favicon-2015.png"
+                                                alt="Google"><span class="item__name">google</span>
+                                            <p class="item__description">
+                                                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                                                ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+                                                quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
+                                                vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+                                                imperdiet a, venenatis vitae, justo.
+                                            </p>
+                                        </div>
+                                        <div class="item__avatar"></div>
+                                        <p class="item__people">Mary Tompson</p>
+                                        <p class="item__occupation">Ceo of Dribbble</p>
+                                    </div>
+
+                                    <div class="item">
+                                        <div class="item__content">
+                                            <img class="item__img"
+                                                src="https://www.hrexaminer.com/wp-content/uploads/2016/10/2016-10-11-hrexaminer-stackoverflow-6-xxl-sq-250px.png"
+                                                alt="Stackoverflow"><span class="item__name">stackoverflow</span>
+                                            <p class="item__description">
+                                                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                                                Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+                                                aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet
+                                                a, venenatis vitae, justo.
+                                            </p>
+                                        </div>
+                                        <div class="item__avatar"></div>
+                                        <p class="item__people">Andrew Palmer</p>
+                                        <p class="item__occupation">Ceo of Slack</p>
+                                    </div>
+
+                                </div>
+
+                                <!-- Left and right controls -->
+                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                    <img class="carousel-control__img"
+                                        src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDMxLjQ5NCAzMS40OTQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMxLjQ5NCAzMS40OTQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4Ij4KPHBhdGggZD0iTTEwLjI3Myw1LjAwOWMwLjQ0NC0wLjQ0NCwxLjE0My0wLjQ0NCwxLjU4NywwYzAuNDI5LDAuNDI5LDAuNDI5LDEuMTQzLDAsMS41NzFsLTguMDQ3LDguMDQ3aDI2LjU1NCAgYzAuNjE5LDAsMS4xMjcsMC40OTIsMS4xMjcsMS4xMTFjMCwwLjYxOS0wLjUwOCwxLjEyNy0xLjEyNywxLjEyN0gzLjgxM2w4LjA0Nyw4LjAzMmMwLjQyOSwwLjQ0NCwwLjQyOSwxLjE1OSwwLDEuNTg3ICBjLTAuNDQ0LDAuNDQ0LTEuMTQzLDAuNDQ0LTEuNTg3LDBsLTkuOTUyLTkuOTUyYy0wLjQyOS0wLjQyOS0wLjQyOS0xLjE0MywwLTEuNTcxTDEwLjI3Myw1LjAwOXoiIGZpbGw9IiM2Zjc5ZmYiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                    <img class="carousel-control__img"
+                                        src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDMxLjQ5IDMxLjQ5IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzMS40OSAzMS40OTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIzMnB4IiBoZWlnaHQ9IjMycHgiPgo8cGF0aCBkPSJNMjEuMjA1LDUuMDA3Yy0wLjQyOS0wLjQ0NC0xLjE0My0wLjQ0NC0xLjU4NywwYy0wLjQyOSwwLjQyOS0wLjQyOSwxLjE0MywwLDEuNTcxbDguMDQ3LDguMDQ3SDEuMTExICBDMC40OTIsMTQuNjI2LDAsMTUuMTE4LDAsMTUuNzM3YzAsMC42MTksMC40OTIsMS4xMjcsMS4xMTEsMS4xMjdoMjYuNTU0bC04LjA0Nyw4LjAzMmMtMC40MjksMC40NDQtMC40MjksMS4xNTksMCwxLjU4NyAgYzAuNDQ0LDAuNDQ0LDEuMTU5LDAuNDQ0LDEuNTg3LDBsOS45NTItOS45NTJjMC40NDQtMC40MjksMC40NDQtMS4xNDMsMC0xLjU3MUwyMS4yMDUsNS4wMDd6IiBmaWxsPSIjNmY3OWZmIi8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+
+                                </a>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="sect sect--white sect--no-padding">
+                <div class="container">
+                    <div class="row row--center">
+                        <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                            <a href="#" class="partner__link">
+                                <img class="partner_img" src="https://image.ibb.co/mOtHRw/fblogo.png">
+                            </a>
+                        </div>
+
+                        <div class="col-md-3  col-xs-6 col-sm-6 partner">
+                            <a href="#" class="partner__link">
+                                <img class="partner_img" src="https://image.ibb.co/nfpXRw/twitterlogo.png">
+                            </a>
+                        </div>
+
+
+                        <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                            <a href="#" class="partner__link">
+                                <img class="partner_img" src="https://image.ibb.co/imgOYb/googlelogo.png">
+                            </a>
+                        </div>
+
+                        <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                            <a href="#" class="partner__link">
+                                <img class="partner_img" src="https://image.ibb.co/ebGAeG/dribbblelogo.png">
+                            </a>
+                        </div>
+
+
+                    </div>
+                    <div class="row row--center">
+                        <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                            <a href="#" class="partner__link">
+                                <img class="partner_img" src="https://image.ibb.co/npV8Yb/gitlogo.png">
+                            </a>
+                        </div>
+
+                        <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                            <a href="#" class="partner__link">
+                                <img class="partner_img" src="https://image.ibb.co/cGyZ6w/stacklogo.png">
+                            </a>
+                        </div>
+
+
+                        <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                            <a href="#" class="partner__link">
+                                <img class="partner_img" src="https://image.ibb.co/ij03zG/inlogo.png">
+                            </a>
+                        </div>
+
+                        <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                            <a href="#" class="partner__link">
+                                <img class="partner_img" src="https://image.ibb.co/ekqdzG/codepenlogo.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sect sect--white">
+                <div class="container">
+                    <div class="row">
+                        <h1 class="row__title">
+                            Our blog
+                        </h1>
+                        <h2 class="row__sub">Sneak peeks from our writings</h2>
+                    </div>
+
+                    <div class="row row--margin">
+                        <div class="col-md-6 article-pre__col">
+                            <a href="#" class="article-pre ">
+                                <div class="article-pre__img article-pre__img--first"></div>
+                                <h2 class="article-pre__info">
+                                    <span class="article-pre__cat">Protips • </span><span class="article-pre__aut"> by
+                                        Ann Timothy</span> <span class="article-pre__date"> - 5 mins read</span>
+                                </h2>
+                                <h1 class="article-pre__title">How to improve analytics using few tools in Bricks<span
+                                        class="article-pre__arrow--purple"> →</span></h1>
+                            </a>
+                        </div>
+
+                        <div class="col-md-6 article-pre__col">
+                            <a href="#" class="article-pre ">
+                                <div class="article-pre__img article-pre__img--second"></div>
+                                <h2 class="article-pre__info">
+                                    <span class="article-pre__cat">Pricing • </span><span class="article-pre__aut"> by
+                                        Josh Ford</span> <span class="article-pre__date"> - 5 mins read</span>
+                                </h2>
+                                <h1 class="article-pre__title">Rich Thornett & Dan Coderholm about Dribbble in early
+                                    2009<span class="article-pre__arrow--purple">→</span></h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 article-pre__col">
+                            <a href="#" class="article-pre ">
+                                <div class="article-pre__img article-pre__img--fourth"></div>
+                                <h2 class="article-pre__info">
+                                    <span class="article-pre__cat">Success Stories • </span><span
+                                        class="article-pre__aut"> by Andrew Lincoln</span> <span
+                                        class="article-pre__date"> - 5 mins read</span>
+                                </h2>
+                                <h1 class="article-pre__title">Steward Butterfield told us about his startup Slack<span
+                                        class="article-pre__arrow--purple"> →</span></h1>
+                            </a>
+                        </div>
+
+                        <div class="col-md-6 article-pre__col">
+                            <a href="#" class="article-pre ">
+                                <div class="article-pre__img article-pre__img--third"></div>
+                                <h2 class="article-pre__info">
+                                    <span class="article-pre__cat">Protips • </span><span class="article-pre__aut"> by
+                                        Ann Timothy</span> <span class="article-pre__date"> - 5 mins read</span>
+                                </h2>
+                                <h1 class="article-pre__title">How to improve analytics using few tools in Bricks<span
+                                        class="article-pre__arrow--purple"> →</span></h1>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sect sect--padding-bottom">
+                <div class="container">
+                    <div class="row">
+                        <h1 class="row__title">
+                            Contact Us </h1>
+                        <h2 class="row__sub">Feel free to ask any questions</h2>
+                    </div>
+                    <div class="row row--margin">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4">
+                            <div class="contacts">
+                                <a href="#" class="contacts__link"><img src="https://image.ibb.co/kcVou6/path3000.png">
+                                    <h1 class="contacts_title-ag">Lingui<span class="contacts--light">.fy</span></h1>
+                                </a>
+                                <p class="contacts__address">
+                                    431 Broadway, Floor 1-2<br>
+                                    New York NY 10013<br>
+                                    United States
+                                </p>
+                                <p class="contacts__info">
+                                    tel. <a href="#" class="contacts__info-link">+1 234 567 890</a>
+                                </p>
+                                <p class="contacts__info">
+                                    m. <a href="#" class="contacts__info-link">info_bricks.io</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <form id="contact" class="form">
+                                <div class="form-group">
+                                    <select class="form__field form__select">
+                                        <option selected value>Choose topic*</option>
+                                        <option value=1>Pricing</option>
+                                        <option value=2>Success Stories</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form__field--half">
+                                        <input type="text" placeholder="Name*" class="form__field form__text" />
+                                    </div>
+                                    <div class="form__field--half">
+                                        <input type="text" placeholder="Surname" class="form__field form__text" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form__field--half">
+                                        <input type="text" placeholder="Email address*"
+                                            class="form__field form__text" />
+                                    </div>
+                                    <div class="form__field--half">
+                                        <input type="text" placeholder="Phone number"
+                                            class="form__field form__text" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea type="text" placeholder="Your messsage*"
+                                        class="form__field form__textarea"></textarea>
+                                    <button class="btn btn--up btn--width" type="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sect--violet" style="position: relative; padding-top: 90px;">
+                <img src="https://image.ibb.co/fWyVtb/path3762.png" class="career-img img-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center" style="padding-bottom: 10px;">
+                            <h1 class="career_title">Oh! You have digged our website in search for a new job?</h1>
+                            <h1 class="career_sub">We will be pleased to have you onboard! Check open positions.</h1>
+                            <a href="#" class="btn btn--white btn--width">Careers</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <footer class="footer">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-2 col-6 text-center text-md-left">
+                            <img class="footer__img img-fluid" src="https://image.ibb.co/kcVou6/path3000.png" alt="Lingui logo">
+                            <h1 class="footer__title">Lingui<span class="footer__light">.fy</span></h1>
+                        </div>
+                        <div class="col-md-10 col-6 text-center text-md-right">
+                            <div class="footer__social">
+                                <a href="#" class="footer__social-l">
+                                    <img src="data:image/svg+xml;utf8,..."/>
+                                </a>
+                                <a href="#" class="footer__social-l">
+                                    <img src="data:image/svg+xml;utf8,..."/>
+                                </a>
+                                <a href="#" class="footer__social-l">
+                                    <img src="data:image/svg+xml;utf8,..."/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            
