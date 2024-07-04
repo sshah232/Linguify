@@ -33,7 +33,7 @@ export class LandingPageComponent implements OnInit {
     if (this.contactForm.valid) {
       this.emailService.sendContactForm(this.contactForm.value).subscribe(response => {
         this.contactForm.reset(); // Clear the form
-        this.dialog.open(SuccessDialogComponent); // Open the success dialog
+        // this.dialog.open(SuccessDialogComponent); // Open the success dialog
       }, error => {
         console.error('Error submitting form', error);
       });

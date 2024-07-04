@@ -1,0 +1,73 @@
+{
+  "hash": "7e6cb351",
+  "configHash": "661523fe",
+  "lockfileHash": "477739b3",
+  "browserHash": "880f1fff",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "c4d60b0b",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "f28d2971",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "384d0749",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "4dcda8ec",
+      "needsInterop": false
+    },
+    "@angular/material/button": {
+      "src": "../../../../../node_modules/@angular/material/fesm2022/button.mjs",
+      "file": "@angular_material_button.js",
+      "fileHash": "40ef7401",
+      "needsInterop": false
+    },
+    "@angular/material/dialog": {
+      "src": "../../../../../node_modules/@angular/material/fesm2022/dialog.mjs",
+      "file": "@angular_material_dialog.js",
+      "fileHash": "22dbf000",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "effd0570",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "58bf2ebd",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-AANURSEO": {
+      "file": "chunk-AANURSEO.js"
+    },
+    "chunk-5IAL6CS2": {
+      "file": "chunk-5IAL6CS2.js"
+    },
+    "chunk-4IC67BCD": {
+      "file": "chunk-4IC67BCD.js"
+    },
+    "chunk-XIQPQ3YC": {
+      "file": "chunk-XIQPQ3YC.js"
+    },
+    "chunk-BJWBSQLD": {
+      "file": "chunk-BJWBSQLD.js"
+    }
+  }
+}
