@@ -534,41 +534,36 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <form id="contact" class="form">
-                                <div class="form-group">
-                                    <select class="form__field form__select">
-                                        <option selected value>Choose topic*</option>
-                                        <option value=1>Features</option>
-                                        <option value=2>Success Stories</option>
-                                    </select>
+                            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" id="contact" class="form">
+                              <div class="form-group">
+                                <select formControlName="topic" class="form__field form__select">
+                                  <option selected value>Choose topic*</option>
+                                  <option value="Features">Features</option>
+                                  <option value="Success Stories">Success Stories</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <div class="form__field--half">
+                                  <input type="text" formControlName="name" placeholder="Name*" class="form__field form__text" />
                                 </div>
-                                <div class="form-group">
-                                    <div class="form__field--half">
-                                        <input type="text" placeholder="Name*" class="form__field form__text" />
-                                    </div>
-                                    <div class="form__field--half">
-                                        <input type="text" placeholder="Surname" class="form__field form__text" />
-                                    </div>
+                                <div class="form__field--half">
+                                  <input type="text" formControlName="surname" placeholder="Surname" class="form__field form__text" />
                                 </div>
-
-                                <div class="form-group">
-                                    <div class="form__field--half">
-                                        <input type="text" placeholder="Email address*"
-                                            class="form__field form__text" />
-                                    </div>
-                                    <div class="form__field--half">
-                                        <input type="text" placeholder="Phone number"
-                                            class="form__field form__text" />
-                                    </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="form__field--half">
+                                  <input type="email" formControlName="email" placeholder="Email address*" class="form__field form__text" />
                                 </div>
-
-                                <div class="form-group">
-                                    <textarea type="text" placeholder="Your messsage*"
-                                        class="form__field form__textarea"></textarea>
-                                    <button class="btn btn--up btn--width" type="submit">Submit</button>
+                                <div class="form__field--half">
+                                  <input type="text" formControlName="phone" placeholder="Phone number" class="form__field form__text" />
                                 </div>
+                              </div>
+                              <div class="form-group">
+                                <textarea formControlName="message" placeholder="Your message*" class="form__field form__textarea"></textarea>
+                                <button class="btn btn--up btn--width" type="submit">Submit</button>
+                              </div>
                             </form>
-                        </div>
+                          </div>
                         <div class="col-md-1"></div>
                     </div>
                 </div>
