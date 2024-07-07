@@ -4,6 +4,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+interface Language {
+  name: string;
+  code: string;
+}
+
 @Component({
   selector: 'app-text-translator',
   standalone: true,
@@ -17,6 +22,29 @@ export class TextTranslatorComponent {
   tgtLang: string = '';
   translatedText: string = '';
   errorText: string = '';
+
+  languages: Language[] = [
+    { name: 'Arabic', code: 'ar' },
+    { name: 'Bulgarian', code: 'bg' },
+    { name: 'German', code: 'de' },
+    { name: 'Modern Greek', code: 'el' },
+    { name: 'English', code: 'en' },
+    { name: 'Spanish', code: 'es' },
+    { name: 'French', code: 'fr' },
+    { name: 'Hindi', code: 'hi' },
+    { name: 'Italian', code: 'it' },
+    { name: 'Japanese', code: 'ja' },
+    { name: 'Dutch', code: 'nl' },
+    { name: 'Polish', code: 'pl' },
+    { name: 'Portuguese', code: 'pt' },
+    { name: 'Russian', code: 'ru' },
+    { name: 'Swahili', code: 'sw' },
+    { name: 'Thai', code: 'th' },
+    { name: 'Turkish', code: 'tr' },
+    { name: 'Urdu', code: 'ur' },
+    { name: 'Vietnamese', code: 'vi' },
+    { name: 'Chinese', code: 'zh' }
+  ];
 
   constructor(private translationService: TranslationService) { }
 
