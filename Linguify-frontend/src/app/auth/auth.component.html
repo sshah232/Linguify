@@ -1,0 +1,19 @@
+<div class="auth-container">
+    <h2>{{ isLoginMode ? 'Login' : 'Signup' }}</h2>
+    <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="username">Username</label>
+        <input id="username" formControlName="username" type="text">
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input id="password" formControlName="password" type="password">
+      </div>
+      <button type="submit">{{ isLoginMode ? 'Login' : 'Signup' }}</button>
+    </form>
+    <button (click)="onSwitchMode()">
+      Switch to {{ isLoginMode ? 'Signup' : 'Login' }}
+    </button>
+    <p *ngIf="errorMessage">{{ errorMessage }}</p>
+  </div>
+  

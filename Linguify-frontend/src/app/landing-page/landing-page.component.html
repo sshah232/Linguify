@@ -25,12 +25,12 @@
             <div class="header__menu">
                 <nav id="navbar" class="header__nav collapse">
                     <ul class="header__elenco">
-                        <li class="header__el"><a href="#home" class="header__link">Home</a></li>
+                        <li class="header__el"><a routerLink="/" class="header__link">Home</a></li>
                         <li class="header__el"><a href="#features" class="header__link">Features</a></li>
-                        <!-- <li class="header__el"><a href="#" class="header__link">Success stories</a></li>
-                        <li class="header__el"><a href="#" class="header__link">Blog</a></li> -->
                         <li class="header__el"><a href="#contactus" class="header__link">Contact us</a></li>
-                        <li class="header__el header__el--blue"><a href="" class="btn btn--white">Sign In →</a></li>
+                        <li class="header__el"><a *ngIf="authService.checkAuth()" routerLink="/services" class="header__link">Services</a></li>
+                        <li class="header__el header__el--blue"><a *ngIf="!authService.checkAuth()" routerLink="/auth" class="btn btn--white">Sign In →</a></li>
+                        <li class="header__el header__el--blue"><a *ngIf="authService.checkAuth()" (click)="onLogout()" class="btn btn--white">Sign Out →</a></li>
                     </ul>
                 </nav>
             </div>
@@ -152,7 +152,7 @@
                                     <!-- <li class="price-box__list-el">No contractors limit </li> -->
                                 </ul>
                                 <div class="price-box__btn">
-                                    <a class="btn btn--purple btn--width">Start now</a>
+                                    <a href="http://localhost:4200/translate" routerLink="translate" class="btn btn--purple btn--width">Start now</a>
                                 </div>
                             </div>
                         </div>
@@ -526,10 +526,10 @@
                                     United States
                                 </p>
                                 <p class="contacts__info">
-                                    tel. <a href="#" class="contacts__info-link">+1 234 567 890</a>
+                                    tel. <a href="#" class="contacts__info-link">+1 602 576 4308</a>
                                 </p>
                                 <p class="contacts__info">
-                                    m. <a href="#" class="contacts__info-link">info_bricks.io</a>
+                                    m. <a href="#" mailto="linguifys@gmail.com" class="contacts__info-link">linguifys&#64;gmail.com</a>
                                 </p>
                             </div>
                         </div>
@@ -537,14 +537,15 @@
                             <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" id="contact" class="form">
                               <div class="form-group">
                                 <select formControlName="topic" class="form__field form__select">
-                                  <option selected value>Choose topic*</option>
-                                  <option value="Features">Features</option>
-                                  <option value="Success Stories">Success Stories</option>
+                                  <option selected value>Choose topic</option>
+                                  <option value="Features">Doubts</option>
+                                  <option value="Success Stories">Suggestions</option>
+                                  <option value="Collaboration?">Collaboration?</option>
                                 </select>
                               </div>
                               <div class="form-group">
                                 <div class="form__field--half">
-                                  <input type="text" formControlName="name" placeholder="Name*" class="form__field form__text" />
+                                  <input type="text" formControlName="name" placeholder="Name" class="form__field form__text" />
                                 </div>
                                 <div class="form__field--half">
                                   <input type="text" formControlName="surname" placeholder="Surname" class="form__field form__text" />
@@ -552,14 +553,14 @@
                               </div>
                               <div class="form-group">
                                 <div class="form__field--half">
-                                  <input type="email" formControlName="email" placeholder="Email address*" class="form__field form__text" />
+                                  <input type="email" formControlName="email" placeholder="Email address" class="form__field form__text" />
                                 </div>
                                 <div class="form__field--half">
-                                  <input type="text" formControlName="phone" placeholder="Phone number" class="form__field form__text" />
+                                  <input type="number" formControlName="phone" placeholder="Phone number" class="form__field form__text" />
                                 </div>
                               </div>
                               <div class="form-group">
-                                <textarea formControlName="message" placeholder="Your message*" class="form__field form__textarea"></textarea>
+                                <textarea formControlName="message" placeholder="Your message" class="form__field form__textarea"></textarea>
                                 <button class="btn btn--up btn--width" type="submit">Submit</button>
                               </div>
                             </form>

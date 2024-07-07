@@ -1,0 +1,83 @@
+<!-- <div>
+    <h2>Text Translator</h2>
+    <textarea [(ngModel)]="text" placeholder="Enter text to translate"></textarea>
+    <br>
+    <label for="srcLang">Source Language:</label>
+    <input [(ngModel)]="srcLang" id="srcLang" type="text">
+    <label for="tgtLang">Target Language:</label>
+    <input [(ngModel)]="tgtLang" id="tgtLang" type="text">
+    <br>
+    <button (click)="translateText()">Translate</button>
+    <h3>Translated Text:</h3>
+    <p>{{ translatedText }}</p>
+  </div>
+   -->
+
+   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="https://image.ibb.co/fOur3b/favicon.png" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="theme-color" content="#1885ed">
+    <title>Multilingual Text Translation</title>
+    
+</head>
+
+<body>
+    <header class="header">
+        <div id="home" class="container header__container">
+            <div class="header__logo"><img class="header__img" src="https://image.ibb.co/kcVou6/path3000.png">
+                <h1 class="header__title">Lingui<span class="header__light">.fy</span></h1>
+            </div>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="header__menu">
+                <nav id="navbar" class="header__nav collapse">
+                    <ul class="header__elenco">
+                        <li class="header__el"><a href="" routerLink="/" class="header__link">Home</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="sect sect--padding-bottom">
+        <div class="container">
+            <div class="row row--center">
+                <h2 class="row__title">Text Translator</h2>
+                <form id="contact" class="form">
+                    <div class="form-group">
+                        <textarea [(ngModel)]="text" name="text" placeholder="Enter text to translate" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="srcLang">Source Language:</label>
+                        <select [(ngModel)]="srcLang" name="srcLang" id="srcLang" class="form-control">
+                            <option value="en">English</option>
+                            <option value="fr">French</option>
+                            <option value="es">Spanish</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tgtLang">Target Language:</label>
+                        <select [(ngModel)]="tgtLang" name="tgtLang" id="tgtLang" class="form-control">
+                            <option value="en">English</option>
+                            <option value="fr">French</option>
+                            <option value="es">Spanish</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                    <button (click)="translateText()" class="btn btn-primary">Translate</button>
+                </form>
+                <h3>Translated Text:</h3>
+                <p>{{ translatedText }}</p>
+                <!-- <p>{{ errorText }}</p> -->
+            </div>
+        </div>
+    </div>
+</body>
