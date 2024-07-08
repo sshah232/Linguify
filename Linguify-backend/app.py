@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify, session
 from flask_cors import CORS
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
-from transformers import M2M100ForConditionalGeneration, M2M100Tokenizer
+from transformers import M2M100ForConditionalGeneration, M2M100Tokenizer, AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
 app = Flask(__name__)
@@ -22,6 +22,10 @@ model_name = "facebook/m2m100_418M"
 tokenizer = M2M100Tokenizer.from_pretrained(model_name)
 model = M2M100ForConditionalGeneration.from_pretrained(model_name)
 
+model_textDetection_name = "papluca/xlm-roberta-base-language-detection"
+tokenizer_textDetection = AutoTokenizer.from_pretrained(model_textDetection_name)
+model_textDetection = AutoModelForSequenceClassification.from_pretrained(model_textDetection_name)
+
 def translate(text, src_lang, tgt_lang):
     tokenizer.src_lang = src_lang
     encoded_text = tokenizer(text, return_tensors="pt")
@@ -29,23 +33,60 @@ def translate(text, src_lang, tgt_lang):
     translated_text = tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)[0]
     return translated_text
 
-@app.route('/api/linguify/detect-language', methods=['POST'])
-def detect_language():
+def detect_language(text):
     try:
-        data = request.json
-        text = data.get('text', '')
-
-        inputs = tokenizer(text, padding=True, truncation=True, return_tensors="pt")
+        inputs = tokenizer_textDetection(text, padding=True, truncation=True, return_tensors="pt")
 
         with torch.no_grad():
-            logits = model(**inputs).logits
+            logits = model_textDetection(**inputs).logits
 
         preds = torch.softmax(logits, dim=-1)
-        id2lang = model.config.id2label
+        id2lang = model_textDetection.config.id2label
         vals, idxs = torch.max(preds, dim=1)
         detected_language = id2lang[idxs.item()]
 
-        return jsonify({'detected_language': detected_language})
+        lang_code_to_name = {
+            'ar': 'Arabic',
+            'bg': 'Bulgarian',
+            'de': 'German',
+            'el': 'Modern Greek',
+            'en': 'English',
+            'es': 'Spanish',
+            'fr': 'French',
+            'hi': 'Hindi',
+            'it': 'Italian',
+            'ja': 'Japanese',
+            'nl': 'Dutch',
+            'pl': 'Polish',
+            'pt': 'Portuguese',
+            'ru': 'Russian',
+            'sw': 'Swahili',
+            'th': 'Thai',
+            'tr': 'Turkish',
+            'ur': 'Urdu',
+            'vi': 'Vietnamese',
+            'zh': 'Chinese',
+        }
+
+        return lang_code_to_name.get(detected_language, 'Unknown')
+
+    except Exception as e:
+        app.logger.error(f"Error during language detection: {e}")
+        raise
+
+@app.route('/api/linguify/text-detection', methods=['POST'])
+def language_detection():
+    try:
+        data = request.json
+        app.logger.debug(f"Received data: {data}")
+        text = data.get('text')
+
+        if not text:
+            return jsonify({"error": "Missing required parameters"}), 400
+
+        detected_language = detect_language(text)
+        app.logger.debug(f"Detected language: {detected_language}")
+        return jsonify({"detected_language": detected_language}), 200
 
     except Exception as e:
         app.logger.error(f"Error during language detection: {e}")
