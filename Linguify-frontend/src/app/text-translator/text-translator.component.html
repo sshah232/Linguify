@@ -11,8 +11,8 @@
 <body>
     <header class="header">
         <div id="home" class="container header__container">
-            <div class="header__logo"><img class="header__img" src="https://image.ibb.co/kcVou6/path3000.png">
-                <h1 class="header__title">Lingui<span class="header__light">.fy</span></h1>
+            <div class="header__logo"><img class="header__img" src="https://image.ibb.co/kcVou6/path3000.png" href="" routerLink="/">
+                <a class="header__title" href="" routerLink="/" style="text-decoration: none;">Lingui<span class="header__light">.fy</span></a>
             </div>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                 aria-expanded="false" aria-controls="navbar">
@@ -37,21 +37,21 @@
                 <h2 class="row__title">Text Translator</h2>
                 <form id="contact" class="form" (ngSubmit)="translateText()">
                     <div class="form-group">
-                        <textarea [(ngModel)]="text" name="text" placeholder="Enter text to translate" class="form-control"></textarea>
+                        <textarea [(ngModel)]="text" name="text" placeholder="Enter text to translate" class="form__field form__textarea"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="srcLang">Source Language:</label>
-                        <select [(ngModel)]="srcLang" name="srcLang" id="srcLang" class="form-control">
+                        <select [(ngModel)]="srcLang" name="srcLang" id="srcLang" class="form__field form__select">
                             <option *ngFor="let lang of languages" [value]="lang.code">{{ lang.name }}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="tgtLang">Target Language:</label>
-                        <select [(ngModel)]="tgtLang" name="tgtLang" id="tgtLang" class="form-control">
+                        <select [(ngModel)]="tgtLang" name="tgtLang" id="tgtLang" class="form__field form__select">
                             <option *ngFor="let lang of languages" [value]="lang.code">{{ lang.name }}</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary translate-btn" [disabled]="isLoading">
+                    <button type="submit" class="btn btn-primary translate-btn" [disabled]="isLoading" style="border: none;">
                         <span *ngIf="!isLoading">Translate</span>
                         <span *ngIf="isLoading" class="loading-icon"><img src="../../assets/loading-icon.gif"></span>
                     </button>

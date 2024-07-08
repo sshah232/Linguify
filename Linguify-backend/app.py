@@ -29,23 +29,27 @@ def translate(text, src_lang, tgt_lang):
     translated_text = tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)[0]
     return translated_text
 
-@app.route('/detect-language', methods=['POST'])
+@app.route('/api/linguify/detect-language', methods=['POST'])
 def detect_language():
-    data = request.json
-    text = data.get('text', '')
+    try:
+        data = request.json
+        text = data.get('text', '')
 
-    inputs = tokenizer(text, padding=True, truncation=True, return_tensors="pt")
+        inputs = tokenizer(text, padding=True, truncation=True, return_tensors="pt")
 
-    with torch.no_grad():
-        logits = model(**inputs).logits
+        with torch.no_grad():
+            logits = model(**inputs).logits
 
-    preds = torch.softmax(logits, dim=-1)
+        preds = torch.softmax(logits, dim=-1)
+        id2lang = model.config.id2label
+        vals, idxs = torch.max(preds, dim=1)
+        detected_language = id2lang[idxs.item()]
 
-    id2lang = model.config.id2label
-    vals, idxs = torch.max(preds, dim=1)
-    detected_language = id2lang[idxs.item()]
+        return jsonify({'detected_language': detected_language})
 
-    return jsonify({'detected_language': detected_language})
+    except Exception as e:
+        app.logger.error(f"Error during language detection: {e}")
+        return jsonify({"error": "Internal Server Error"}), 500
 
 @app.route('/api/linguify/translate', methods=['POST'])
 def translate_text():

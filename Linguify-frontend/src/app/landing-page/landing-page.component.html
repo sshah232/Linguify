@@ -12,7 +12,7 @@
     <header class="header">
         <div id="home" class="container header__container">
             <div class="header__logo"><img class="header__img" src="https://image.ibb.co/kcVou6/path3000.png">
-                <h1 class="header__title">Lingui<span class="header__light">.fy</span></h1>
+                <a class="header__title" href="" routerLink="/" style="text-decoration: none;">Lingui<span class="header__light">.fy</span></a>
             </div>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                 aria-expanded="false" aria-controls="navbar">
@@ -28,9 +28,9 @@
                         <li class="header__el"><a routerLink="/" class="header__link">Home</a></li>
                         <li class="header__el"><a href="#features" class="header__link">Features</a></li>
                         <li class="header__el"><a href="#contactus" class="header__link">Contact us</a></li>
-                        <li class="header__el"><a *ngIf="authService.checkAuth()" routerLink="/services" class="header__link">Services</a></li>
+                        <!-- <li class="header__el"><a *ngIf="authService.checkAuth()" routerLink="/services" class="header__link">Services</a></li>
                         <li class="header__el header__el--blue"><a *ngIf="!authService.checkAuth()" routerLink="/auth" class="btn btn--white">Sign In →</a></li>
-                        <li class="header__el header__el--blue"><a *ngIf="authService.checkAuth()" (click)="onLogout()" class="btn btn--white">Sign Out →</a></li>
+                        <li class="header__el header__el--blue"><a *ngIf="authService.checkAuth()" (click)="onLogout()" class="btn btn--white">Sign Out →</a></li> -->
                     </ul>
                 </nav>
             </div>
@@ -237,7 +237,7 @@
                                     <li class="price-box__list-el">Accurate Language Profiling</li>
                                 </ul>
                                 <div class="price-box__btn">
-                                    <a class="btn btn--purple btn--width">Start now</a>
+                                    <a href="http://localhost:4200/text-detection" routerLink="text-detection" class="btn btn--purple btn--width">Start now</a>
                                 </div>
                             </div>
                         </div>

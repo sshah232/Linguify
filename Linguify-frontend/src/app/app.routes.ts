@@ -5,10 +5,12 @@ import { AuthComponent } from './auth/auth.component';
 // import { ServicesPageComponent } from './services-page/services-page.component';
 import { AuthGuard } from '../app/auth.guard';
 import { TextTranslatorComponent } from './text-translator/text-translator.component';
+import { TextDetectionComponent } from './text-detection/text-detection.component';
 
 export const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'translate', component: TextTranslatorComponent },
+  { path: 'text-detection', component: TextDetectionComponent },
   // { path: 'login', component: AuthComponent },
   { path: '**', redirectTo: '' }
   // { path: 'services', component: ServicesPageComponent, canActivate: [AuthGuard] }
