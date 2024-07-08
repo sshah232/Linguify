@@ -22,6 +22,7 @@ export class TextTranslatorComponent {
   tgtLang: string = '';
   translatedText: string = '';
   errorText: string = '';
+  isLoading: boolean = false ;
 
   languages: Language[] = [
     { name: 'Arabic', code: 'ar' },
@@ -49,12 +50,15 @@ export class TextTranslatorComponent {
   constructor(private translationService: TranslationService) { }
 
   translateText() {
+    this.isLoading = true;
     this.translationService.translate(this.text, this.srcLang, this.tgtLang).subscribe(
       response => {
         this.translatedText = response.translated_text;
+        this.isLoading = false;
       },
       error => {
         console.error('Error during translation:', error);
+        this.isLoading = false;
       }
     );
   }

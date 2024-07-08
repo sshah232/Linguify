@@ -2,7 +2,6 @@ import os
 import secrets
 from flask import Flask, request, jsonify, session
 from flask_cors import CORS
-from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
 from transformers import M2M100ForConditionalGeneration, M2M100Tokenizer
