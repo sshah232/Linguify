@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class VideoToTextService {
 
-  private apiUrl = 'http://localhost:5038/api/linguify/video-to-text'; // Adjust if your endpoint URL is different
+  private apiUrl = 'http://localhost:5038/api/linguify/video-to-text'; 
 
   constructor(private http: HttpClient) { }
 
