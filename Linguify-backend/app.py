@@ -6,6 +6,11 @@ from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
 from transformers import M2M100ForConditionalGeneration, M2M100Tokenizer, AutoTokenizer, AutoModelForSequenceClassification
 import torch
+import sys
+import numpy as np
+import whisper
+import ffmpeg
+import yt_dlp
 
 app = Flask(__name__)
 CORS(app)
@@ -74,6 +79,58 @@ def detect_language(text):
         app.logger.error(f"Error during language detection: {e}")
         raise
 
+def download_video(video_url, output_path):
+    ydl_opts = {
+        'format': 'bestaudio/best',
+        'outtmpl': output_path,
+        'postprocessors': [{
+            'key': 'FFmpegExtractAudio',
+            'preferredcodec': 'mp3',
+            'preferredquality': '192',
+        }],
+        'postprocessor_args': [
+            '-ar', '16000'  
+        ],
+    }
+
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        ydl.download([video_url])
+
+def transcribe_audio(audio_path):
+    try:
+        model = whisper.load_model("base")
+        result = model.transcribe(audio_path)
+        return result["text"]
+    except Exception as e:
+        print(f"Error during transcription: {e}")
+        return None
+
+def transcribe_video(video_url):
+    base_filename = "downloaded_audio"
+    downloaded_audio = f"{base_filename}.mp3"
+    actual_audio_file = f"{base_filename}.mp3.mp3"  
+    
+    try:
+        download_video(video_url, downloaded_audio)
+        
+        if os.path.exists(actual_audio_file):
+            os.rename(actual_audio_file, downloaded_audio)
+        
+        if os.path.exists(downloaded_audio):
+            text = transcribe_audio(downloaded_audio)
+            return text
+        else:
+            return "Audio file not found."
+        
+    except Exception as e:
+        return f"An error occurred: {e}"
+    
+    finally:
+        for file in [downloaded_audio, actual_audio_file]:
+            if os.path.exists(file):
+                os.remove(file)
+
+
 @app.route('/api/linguify/text-detection', methods=['POST'])
 def language_detection():
     try:
@@ -109,7 +166,6 @@ def translate_text():
     except Exception as e:
         app.logger.error(f"Error during translation: {e}")
         return jsonify({"error": "Internal Server Error"}), 500
-
 
 # Login & Register
 @app.route('/api/linguify/signup', methods=['POST'])
@@ -197,6 +253,23 @@ def delete_user():
     user_id = request.args.get('id')
     database.linguifycollection.delete_one({'id': user_id})
     return jsonify({"message": "Deleted Successfully"}), 200
+
+# Video Transcription
+@app.route('/api/linguify/video-to-text', methods=['POST'])
+def video_to_text():
+    try:
+        data = request.json
+        video_url = data.get('video_url')
+
+        if not video_url:
+            return jsonify({"error": "Missing required parameters"}), 400
+
+        transcribed_text = transcribe_video(video_url)
+        return jsonify({"transcribed_text": transcribed_text}), 200
+
+    except Exception as e:
+        app.logger.error(f"Error during video transcription: {e}")
+        return jsonify({"error": "Internal Server Error"}), 500
 
 if __name__ == '__main__':
     app.run(port=5038)

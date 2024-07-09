@@ -6,11 +6,13 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from '../app/auth.guard';
 import { TextTranslatorComponent } from './text-translator/text-translator.component';
 import { TextDetectionComponent } from './text-detection/text-detection.component';
+import { VideoToTextComponent } from './video-to-text/video-to-text.component';
 
 export const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'translate', component: TextTranslatorComponent },
   { path: 'text-detection', component: TextDetectionComponent },
+  { path: 'video-to-text', component: VideoToTextComponent },
   // { path: 'login', component: AuthComponent },
   { path: '**', redirectTo: '' }
   // { path: 'services', component: ServicesPageComponent, canActivate: [AuthGuard] }

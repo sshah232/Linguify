@@ -1,0 +1,57 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="https://image.ibb.co/fOur3b/favicon.png" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta name="theme-color" content="#1885ed">
+  <title>Video to Text</title>
+</head>
+
+<body>
+  <header class="header">
+      <div id="home" class="container header__container">
+          <div class="header__logo"><img class="header__img" src="https://image.ibb.co/kcVou6/path3000.png" href="" routerLink="/">
+              <a class="header__title" href="" routerLink="/" style="text-decoration: none;">Lingui<span class="header__light">.fy</span></a>
+          </div>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+
+          <div class="header__menu">
+              <nav id="navbar" class="header__nav collapse">
+                  <ul class="header__elenco">
+                      <li class="header__el"><a href="" routerLink="/" class="header__link">Home</a></li>
+                  </ul>
+              </nav>
+          </div>
+      </div>
+  </header>
+  <div class="sect sect--padding-bottom">
+      <div class="row row--center">
+          <h2 class="row__title">Video to Text Transcription</h2>
+          <form (ngSubmit)="transcribeVideo()">
+              <div class="form-group">
+                  <label for="videoUrl">Video URL:</label>
+                  <input type="text" id="videoUrl" [(ngModel)]="videoUrl" name="videoUrl" placeholder="Enter video URL to transcribe" class="form__field" required>
+              </div>
+              <button type="submit" class="btn btn-primary" [disabled]="loading">
+                  <span *ngIf="!loading">Transcribe</span>
+                  <span *ngIf="loading" class="loading-icon"><img src="../../assets/loading-icon.gif"></span>
+              </button>
+          </form>
+
+          <div *ngIf="!loading && transcribedText">
+              <h3>Transcribed Text</h3>
+              <p>{{ transcribedText }}</p>
+          </div>
+
+          <div *ngIf="error">
+              <p class="text-danger">{{ error }}</p>
+          </div>
+      </div>
+  </div>
+</body>

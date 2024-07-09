@@ -34,12 +34,13 @@
             </div>
         </div>
     </header>
-    <div class="container">
-        <h2>Language Detection</h2>
+    <div class="sect sect--padding-bottom">
+    <div class="row row--center">
+        <h2 class="row__title">Language Detection</h2>
         <form (ngSubmit)="detectLanguage()">
             <div class="form-group">
                 <textarea [(ngModel)]="text" name="text" placeholder="Enter text to detect language"
-                    class="form-control"></textarea>
+                    class="form__field form__textarea"></textarea>
             </div>
             <button type="submit" class="btn btn-primary" [disabled]="isLoading">
                 <span *ngIf="!isLoading">Detect Language</span>
@@ -55,5 +56,6 @@
         <div *ngIf="errorText">
             <p class="text-danger">{{ errorText }}</p>
         </div>
+    </div>
     </div>
 </body>
