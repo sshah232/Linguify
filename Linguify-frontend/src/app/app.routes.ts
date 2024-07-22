@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { AuthComponent } from './auth/auth.component';
+// import { AuthComponent } from './auth/auth.component';
 // import { ServicesPageComponent } from './services-page/services-page.component';
-import { AuthGuard } from '../app/auth.guard';
+// import { AuthGuard } from '../app/auth.guard';
 import { TextTranslatorComponent } from './text-translator/text-translator.component';
 import { TextDetectionComponent } from './text-detection/text-detection.component';
 import { VideoToTextComponent } from './video-to-text/video-to-text.component';
