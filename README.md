@@ -35,6 +35,6 @@
 - Enabled access to information for users across various linguistic backgrounds, promoting inclusivity and communication.
 
 ### Demo(Backend yet to be hosted)
-**Hosted Frontend:** https://linguifyai.vercel.app/
-**Demo Video:** https://drive.google.com/file/d/1W1wffkFwOrpib4lBh_cDVNRorNJtG_qi/view?usp=sharing
-**LinkeddIn Post:** https://www.linkedin.com/feed/update/urn:li:activity:7216548119159746561/
+- **Hosted Frontend:** https://linguifyai.vercel.app/
+- **Demo Video:** https://drive.google.com/file/d/1W1wffkFwOrpib4lBh_cDVNRorNJtG_qi/view?usp=sharing
+- **LinkedIn Post:** https://www.linkedin.com/feed/update/urn:li:activity:7216548119159746561/
