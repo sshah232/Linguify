@@ -34,5 +34,7 @@
 - Successfully created a prototype that demonstrates the full functionality of Linguify, from video processing to multilingual translation and AI voiceover integration.
 - Enabled access to information for users across various linguistic backgrounds, promoting inclusivity and communication.
 
-### Demo(Yet to be hosted)
-**Link:** https://www.linkedin.com/feed/update/urn:li:activity:7216548119159746561/
+### Demo(Backend yet to be hosted)
+**Hosted Frontend:** https://linguifyai.vercel.app/
+**Demo Video:** https://drive.google.com/file/d/1W1wffkFwOrpib4lBh_cDVNRorNJtG_qi/view?usp=sharing
+**LinkeddIn Post:** https://www.linkedin.com/feed/update/urn:li:activity:7216548119159746561/
